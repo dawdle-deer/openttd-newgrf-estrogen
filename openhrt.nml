@@ -109,75 +109,75 @@ switch (FEAT_INDUSTRIES, SELF, availability_in_testosterone, hormone) {
 // Cargo Sprites
 // --------------------------------
 
-spriteset(sprite_engineering_supplies, "./gfx/engineering_supplies.png") {
+spriteset(sprite_engineering_supplies, "./gfx/icons/engineering_supplies.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_fertilizer, "./gfx/fertilizer.png") {
+spriteset(sprite_fertilizer, "./gfx/icons/fertilizer.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_salt, "./gfx/salt.png") {
+spriteset(sprite_salt, "./gfx/icons/salt.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_potash, "./gfx/potash.png") {
+spriteset(sprite_potash, "./gfx/icons/potash.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_sand, "./gfx/sand.png") {
+spriteset(sprite_sand, "./gfx/icons/sand.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_minerals, "./gfx/minerals.png") {
+spriteset(sprite_minerals, "./gfx/icons/minerals.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_corn, "./gfx/corn.png") {
+spriteset(sprite_corn, "./gfx/icons/corn.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_soybeans, "./gfx/soybeans.png") {
+spriteset(sprite_soybeans, "./gfx/icons/soybeans.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_yams, "./gfx/yams.png") {
+spriteset(sprite_yams, "./gfx/icons/yams.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_vials, "./gfx/vials.png") {
+spriteset(sprite_vials, "./gfx/icons/vials.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_vegetable_oil, "./gfx/vegetable_oil.png") {
+spriteset(sprite_vegetable_oil, "./gfx/icons/vegetable_oil.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_chemicals, "./gfx/chemicals.png") {
+spriteset(sprite_chemicals, "./gfx/icons/chemicals.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_alcohol, "./gfx/alcohol.png") {
+spriteset(sprite_alcohol, "./gfx/icons/alcohol.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_diosgenin, "./gfx/diosgenin.png") {
+spriteset(sprite_diosgenin, "./gfx/icons/diosgenin.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_raw_estrone, "./gfx/raw_estrone.png") {
+spriteset(sprite_raw_estrone, "./gfx/icons/raw_estrone.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_raw_testosterone, "./gfx/raw_testosterone.png") {
+spriteset(sprite_raw_testosterone, "./gfx/icons/raw_testosterone.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_estrogen, "./gfx/estrogen.png") {
+spriteset(sprite_estrogen, "./gfx/icons/estrogen.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
-spriteset(sprite_testosterone, "./gfx/testosterone.png") {
+spriteset(sprite_testosterone, "./gfx/icons/testosterone.png") {
     [0, 0, 8, 8, 0, 0]
 }
 
