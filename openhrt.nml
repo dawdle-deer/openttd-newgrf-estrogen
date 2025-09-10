@@ -920,6 +920,33 @@ switch(FEAT_INDUSTRYTILES, SELF, tile_check_deep_water, [
 
 // Define tiles and layouts that make up the industries.
 // ----------------------------------------------------------------
+
+template industry_tile_template() {
+    [0, 0, 64, 78, -32, -46]
+    [72, 0, 64, 78, -32, -46]
+    [144, 0, 64, 78, -32, -46]
+    [216, 0, 64, 78, -32, -46]
+}
+
+// Placeholders :P
+
+spritelayout spritelayout_placeholder_concrete {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+}
+
+item(FEAT_INDUSTRYTILES, tile_placeholder_concrete) {
+    property {
+        substitute: 0;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+    }
+    graphics {
+        default: spritelayout_placeholder_concrete;
+        random_trigger: trigger_randomize_bits;
+    }
+}
+
 spritelayout spritelayout_placeholder_water {
     ground {
         sprite: GROUNDSPRITE_CONCRETE;
@@ -995,6 +1022,78 @@ item(FEAT_INDUSTRYTILES, tile_placeholder_beach) {
     }
 }
 
+// Farms
+
+// Corn
+
+spriteset (spriteset_farm_cornfield_grown, "./gfx/vox/bin/farm_cornfield_0.png") {
+    industry_tile_template()
+}
+
+spriteset (spriteset_farm_cornfield_halfgrown, "./gfx/vox/bin/farm_cornfield_1.png") {
+    industry_tile_template()
+}
+
+spriteset (spriteset_farm_cornfield_empty, "./gfx/vox/bin/farm_yamfield_2.png") {
+    industry_tile_template()
+}
+
+spriteset (spriteset_farm_cornfield_building_grown, "./gfx/vox/bin/farm_cornfield_building_0.png") {
+    industry_tile_template()
+}
+
+spriteset (spriteset_farm_cornfield_building_halfgrown, "./gfx/vox/bin/farm_cornfield_building_1.png") {
+    industry_tile_template()
+}
+
+spriteset (spriteset_farm_cornfield_building_empty, "./gfx/vox/bin/farm_cornfield_building_2.png") {
+    industry_tile_template()
+}
+
+spritelayout spritelayout_farm_cornfield_grown {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: spriteset_farm_cornfield_grown;
+    }
+}
+
+spritelayout spritelayout_farm_cornfield_empty {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: spriteset_farm_cornfield_empty;
+    }
+}
+
+spritelayout spritelayout_farm_cornfield_building_grown {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: spriteset_farm_cornfield_building_grown;
+    }
+}
+
+spritelayout spritelayout_farm_cornfield_building_empty {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+    }
+    building {
+        sprite: spriteset_farm_cornfield_building_empty;
+    }
+}
+
+// Yams
+
+// TODO
+
+// Soybeans
+
+// TODO
+
 item(FEAT_INDUSTRYTILES, tile_replace_33) {
     property {
         substitute: 33;
@@ -1002,6 +1101,7 @@ item(FEAT_INDUSTRYTILES, tile_replace_33) {
     }
     graphics {
         random_trigger: trigger_randomize_bits;
+        //default: spritelayout_farm_cornfield_empty;
     }
 }
 
@@ -1012,6 +1112,7 @@ item(FEAT_INDUSTRYTILES, tile_replace_34) {
     }
     graphics {
         random_trigger: trigger_randomize_bits;
+        //default: spritelayout_farm_cornfield_empty;
     }
 }
 
@@ -1022,6 +1123,7 @@ item(FEAT_INDUSTRYTILES, tile_replace_35) {
     }
     graphics {
         random_trigger: trigger_randomize_bits;
+        //default: spritelayout_farm_cornfield_empty;
     }
 }
 
@@ -1032,6 +1134,7 @@ item(FEAT_INDUSTRYTILES, tile_replace_36) {
     }
     graphics {
         random_trigger: trigger_randomize_bits;
+        //default: spritelayout_farm_cornfield_empty;
     }
 }
 
@@ -1042,6 +1145,7 @@ item(FEAT_INDUSTRYTILES, tile_replace_37) {
     }
     graphics {
         random_trigger: trigger_randomize_bits;
+        //default: spritelayout_farm_cornfield_empty;
     }
 }
 
@@ -1052,6 +1156,7 @@ item(FEAT_INDUSTRYTILES, tile_replace_38) {
     }
     graphics {
         random_trigger: trigger_randomize_bits;
+        //default: spritelayout_farm_cornfield_empty;
     }
 }
 
@@ -1132,6 +1237,9 @@ tilelayout layout_coast_west {
     1,3: tile_placeholder_beach;
 }
 
+
+// Quarry
+
 item(FEAT_INDUSTRYTILES, tile_replace_110) {
     property {
         substitute: 110;
@@ -1153,6 +1261,8 @@ tilelayout layout_quarry {
     1,2: tile_replace_110;
     2,2: tile_replace_110;
 }
+
+// Mineral mine
 
 item(FEAT_INDUSTRYTILES, tile_replace_101) {
     property {
@@ -1223,6 +1333,8 @@ tilelayout layout_mineral_mine {
     2,2: tile_replace_109;
 }
 
+// Glassworks
+
 item(FEAT_INDUSTRYTILES, tile_replace_39) {
     property {
         substitute: 39;
@@ -1273,6 +1385,8 @@ tilelayout layout_glassworks {
     1,0: tile_replace_41;
     1,1: tile_replace_42;
 }
+
+// Chemical plant
 
 item(FEAT_INDUSTRYTILES, tile_replace_18) {
     property {
@@ -1343,6 +1457,8 @@ tilelayout layout_chemical_plant {
     2,1: tile_replace_23;
 }
 
+// Processing plant
+
 item(FEAT_INDUSTRYTILES, tile_replace_121) {
     property {
         substitute: 121;
@@ -1390,6 +1506,8 @@ tilelayout layout_processing_plant {
     1,1: tile_replace_124;
 }
 
+// Distillery
+
 item(FEAT_INDUSTRYTILES, tile_replace_120) {
     property {
         substitute: 120;
@@ -1400,12 +1518,208 @@ item(FEAT_INDUSTRYTILES, tile_replace_120) {
     }
 }
 
+spriteset(spriteset_distillery_tile_small_building, "gfx/vox/bin/distillery_tile_small_building.png") {
+    industry_tile_template()
+}
 
-tilelayout layout_distillery {
-    0,0: tile_replace_120;
-    0,1: tile_replace_120;
-    1,0: tile_replace_120;
-    1,1: tile_replace_120;
+spritelayout spritelayout_distillery_tile_small_building {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    building {
+        sprite: spriteset_distillery_tile_small_building(LOAD_TEMP(0));
+    }
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, distillery_tile_small_building_switch, orientation, [STORE_TEMP(orientation, 0)]) {
+    spritelayout_distillery_tile_small_building;
+}
+
+item(FEAT_INDUSTRYTILES, distillery_tile_small_building_0) {
+    property {
+        substitute: 120;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+    }
+    graphics {
+        random_trigger: trigger_randomize_bits;
+        default: distillery_tile_small_building_switch(0);
+    }
+}
+
+item(FEAT_INDUSTRYTILES, distillery_tile_small_building_1) {
+    property {
+        substitute: 120;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+    }
+    graphics {
+        random_trigger: trigger_randomize_bits;
+        default: distillery_tile_small_building_switch(3);
+    }
+}
+
+item(FEAT_INDUSTRYTILES, distillery_tile_small_building_2) {
+    property {
+        substitute: 120;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+    }
+    graphics {
+        random_trigger: trigger_randomize_bits;
+        default: distillery_tile_small_building_switch(1);
+    }
+}
+
+spriteset(spriteset_distillery_tile_tank, "gfx/vox/bin/distillery_tile_tank.png") {
+    industry_tile_template()
+}
+
+spritelayout spritelayout_distillery_tile_tank {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    building {
+        sprite: spriteset_distillery_tile_tank(LOAD_TEMP(0));
+    }
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, distillery_tile_tank_switch, orientation, [STORE_TEMP(orientation, 0)]) {
+    spritelayout_distillery_tile_tank;
+}
+
+item(FEAT_INDUSTRYTILES, distillery_tile_tank_0) {
+    property {
+        substitute: 120;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+    }
+    graphics {
+        random_trigger: trigger_randomize_bits;
+        default: distillery_tile_tank_switch(0);
+    }
+}
+item(FEAT_INDUSTRYTILES, distillery_tile_tank_1) {
+    property {
+        substitute: 120;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+    }
+    graphics {
+        random_trigger: trigger_randomize_bits;
+        default: distillery_tile_tank_switch(3);
+    }
+}
+
+spriteset(spriteset_distillery_tile_building, "gfx/vox/bin/distillery_tile_building.png") {
+    industry_tile_template()
+}
+
+spritelayout spritelayout_distillery_tile_building {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    building {
+        sprite: spriteset_distillery_tile_building(LOAD_TEMP(0));
+    }
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, distillery_tile_building_switch, orientation, [STORE_TEMP(orientation, 0)]) {
+    spritelayout_distillery_tile_building;
+}
+
+item(FEAT_INDUSTRYTILES, distillery_tile_building_0) {
+    property {
+        substitute: 120;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+    }
+    graphics {
+        random_trigger: trigger_randomize_bits;
+        default: distillery_tile_building_switch(0);
+    }
+}
+item(FEAT_INDUSTRYTILES, distillery_tile_building_1) {
+    property {
+        substitute: 120;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+    }
+    graphics {
+        random_trigger: trigger_randomize_bits;
+        default: distillery_tile_building_switch(1);
+    }
+}
+spriteset(spriteset_distillery_tile_small_tank, "gfx/vox/bin/distillery_tile_small_tank.png") {
+    industry_tile_template()
+}
+
+spritelayout spritelayout_distillery_tile_small_tank {
+    ground {
+        sprite: GROUNDSPRITE_CONCRETE;
+    }
+    building {
+        sprite: spriteset_distillery_tile_small_tank(LOAD_TEMP(0));
+    }
+}
+
+switch (FEAT_INDUSTRYTILES, SELF, distillery_tile_small_tank_switch, orientation, [STORE_TEMP(orientation, 0)]) {
+    spritelayout_distillery_tile_small_tank;
+}
+
+item(FEAT_INDUSTRYTILES, distillery_tile_small_tank_0) {
+    property {
+        substitute: 120;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+    }
+    graphics {
+        random_trigger: trigger_randomize_bits;
+        default: distillery_tile_small_tank_switch(0);
+    }
+}
+
+item(FEAT_INDUSTRYTILES, distillery_tile_small_tank_1) {
+    property {
+        substitute: 120;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+    }
+    graphics {
+        random_trigger: trigger_randomize_bits;
+        default: distillery_tile_small_tank_switch(1);
+    }
+}
+
+item(FEAT_INDUSTRYTILES, distillery_tile_small_tank_2) {
+    property {
+        substitute: 120;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+    }
+    graphics {
+        random_trigger: trigger_randomize_bits;
+        default: distillery_tile_small_tank_switch(2);
+    }
+}
+
+item(FEAT_INDUSTRYTILES, distillery_tile_small_tank_3) {
+    property {
+        substitute: 120;
+        special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+    }
+    graphics {
+        random_trigger: trigger_randomize_bits;
+        default: distillery_tile_small_tank_switch(3);
+    }
+}
+
+tilelayout layout_distillery_1 {
+    0,0: distillery_tile_tank_0;
+    0,1: distillery_tile_small_tank_1;
+    0,2: distillery_tile_building_0;
+    1,0: distillery_tile_small_tank_2;
+    1,1: distillery_tile_small_building_1;
+    1,2: tile_placeholder_concrete;
+}
+
+tilelayout layout_distillery_2 {
+    0,0: distillery_tile_small_tank_3;
+    0,1: distillery_tile_building_1;
+    1,0: distillery_tile_small_tank_1;
+    1,1: tile_placeholder_concrete;
+    2,0: distillery_tile_tank_1;
+    2,1: distillery_tile_small_building_0;
 }
 
 item(FEAT_INDUSTRYTILES, tile_replace_60) {
@@ -3522,7 +3836,7 @@ item (FEAT_INDUSTRIES, industry_distillery) {
         map_colour: 192;
         min_cargo_distr: 1;
         conflicting_ind_types: [];
-        layouts: [layout_distillery];
+        layouts: [layout_distillery_1, layout_distillery_2];
     }
     graphics {
         location_check: is_isolated(16);

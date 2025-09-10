@@ -1,0 +1,46 @@
+{
+    "lighting_angle": 60,
+    "lighting_elevation": 65,
+    "depth_influence": 0,
+    "tiled_normals": true,
+    "solid_base": true,
+    "soften_edges": 0.5,
+    "fade_to_black": true,
+    "sampler": "disc",
+    "accuracy": 21,
+	"detail_boost": 1.0,
+	"slice_threshold": 32,
+	"slice_length": 32,
+    "size": {
+        "x": 32,
+        "y": 32,
+        "z": 32
+    },
+    "render_elevation": 30,
+    "sprites": [
+        {
+            "angle": 45,
+            "width": 64,
+            "flip": true,
+			"slice": 0
+        },
+        {
+            "angle": 135,
+            "width": 64,
+            "flip": true,
+			"slice": 0
+        },
+        {
+            "angle": 225,
+            "width": 64,
+            "flip": true,
+			"slice": 0
+        },
+        {
+            "angle": 315,
+            "width": 64,
+            "flip": true,
+			"slice": 0
+        }
+    ]
+}
