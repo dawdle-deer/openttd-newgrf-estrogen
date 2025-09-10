@@ -1,2 +1,4 @@
 .nmlcache/*
 *.grf
+gfx/vox/*.png
+!gfx/vox/bin/*.png
